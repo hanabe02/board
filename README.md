@@ -34,7 +34,7 @@
 ### 추가 구현 기술
     로그인 JWT, CRUD 게시판, AOP, 
 
-## 로그인 JWT 로그인 세션 
+## 로그인, 로그아웃 JWT 로그인 세션 
     package com.example.board_back.jwt;
 
     import io.jsonwebtoken.Jwts;
