@@ -9,7 +9,12 @@
     board_back/config/WebConfig
 
     파일 추가
-    
+
+## error 발생 f5 새로고침시 store 에 저장되어 있는 토큰 정보가 초기화 되어서 login 을 다시 애햐하는 문제 발생
+    react 기본 동작 때문에 오류가 발생한 것이었다. 오류 해결 O
+
+    const [checkedLogin, setCheckedLogin] = useState(false); 코드 추가
+    if (!checkedLogin) return <div>로딩 중...</div>; 코드 추가
     
  ## error 발생 Spring boot : Mapper 인식을 못하는 문제 발생
     build.gradle 
@@ -27,7 +32,35 @@
     ex) 쿼리 error
 
 ### 추가 구현 기술
+    로그인 JWT, CRUD 게시판, AOP, 
 
 ## 로그인 JWT 로그인 세션 
+    package com.example.board_back.jwt;
+
+    import io.jsonwebtoken.Jwts;
+    import io.jsonwebtoken.SignatureAlgorithm;
+    import io.jsonwebtoken.security.Keys;
+    import org.springframework.stereotype.Component;
+    
+    import java.security.Key;
+    import java.util.Date;
+    
+    @Component
+    public class JwtUtil {
+        private final Key key = Keys.hmacShaKeyFor("mySecretKeymySecretKeymySecretKeymySecretKey".getBytes());
+        private final long EXPIRATION_TIME = 1000 * 60 * 60; // 1시간
+    
+        public String generateToken(String userId) {
+            return Jwts.builder()
+                    .setSubject(userId)
+                    .setIssuedAt(new Date())
+                    .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                    .signWith(key, SignatureAlgorithm.HS256)
+                    .compact();
+        }
+    }
+
+    세션 부분을 추가하여 로그인을 할 경우 세션을 생성 후, 
+    로그인 정보를 앞단에 전달할 때 함께 세션 토큰을 넣어서 전달한다.
 
 ## CRUD 게시판 (추가, 조회, 수정, 삭제) 구현
