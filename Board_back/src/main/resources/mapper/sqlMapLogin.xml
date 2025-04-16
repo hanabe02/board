@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board_back.login.DAO.LoginMapper">
+    <select id="loginInfo" parameterType="map" resultType="com.example.board_back.login.to.memberTO">
+        SELECT * FROM MEMBER WHERE ID = #{id} AND PW = #{pw}
+    </select>
+</mapper>

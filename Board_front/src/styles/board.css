@@ -1,0 +1,148 @@
+/* 기존 유지 */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+}
+
+table.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.board-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.board-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.board-table td.title a {
+    text-align: left;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.board-table td.title a:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    /* ← 이게 중앙 정렬 역할! */
+    gap: 10px;
+    margin-top: 30px;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 70px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagination-button {
+    padding: 10px 16px;
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.pagination-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination-button:disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+    padding: 10px 14px;
+    color: #999;
+    font-size: 18px;
+    user-select: none;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* 📌 글쓰기/삭제/로그아웃 버튼 그룹 중앙정렬 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    /* ← 여기!! */
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* 버튼 공통 스타일 */
+.btn-delete,
+.btn-write,
+.btn-logout {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover,
+.btn-write:hover,
+.btn-logout:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    min-height: 600px;
+    /* 테이블 높이 고정 */
+    position: relative;
+}

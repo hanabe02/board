@@ -1,0 +1,56 @@
+.write-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.write-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.write-title img {
+    margin-right: 0.5rem;
+}
+
+input.write-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.write-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.write-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.write-buttons button:hover {
+    background-color: #ddd;
+}
+.write-textarea {
+    width: 100%;
+    height: 300px;
+    /* 🔥 내용 입력 칸 크게 */
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    /* ↕️ 사용자가 크기 조절 가능 */
+}

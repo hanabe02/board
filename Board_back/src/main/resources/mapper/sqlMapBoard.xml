@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board_back.board.DAO.BoardMapper">
+<!--    <parameterMap type="map" id="insertBoardAndReply">-->
+<!--        <parameter property="mrpGatheringNoList" javaType="java.lang.String" jdbcType="VARCHAR" mode="IN" />-->
+<!--        <parameter property="ERROR_CODE" javaType="java.lang.Integer" jdbcType="DECIMAL" mode="OUT" />-->
+<!--        <parameter property="ERROR_MSG" javaType="java.lang.String" jdbcType="VARCHAR" mode="OUT" />-->
+<!--    </parameterMap>-->
+
+    <select id="boardNumber" resultType="int">
+        SELECT board_seq.NEXTVAL FROM dual
+    </select>
+
+    <select id="postWriterInsert" parameterType="map" resultType="com.example.board_back.board.to.BoardTO">
+        INSERT INTO board (board_id, writer, title, content, regdate)
+        VALUES (#{boardId}, #{writer}, #{title}, #{content}, SYSDATE)
+    </select>
+
+    <update id="patchBoardUpdate" parameterType="map">
+        UPDATE board
+        SET content = #{content}
+        WHERE board_id = #{boardId}
+    </update>
+
+    <delete id="deleteBoard" parameterType="map">
+        DELETE FROM board
+        WHERE board_id = #{boardId}
+    </delete>
+
+</mapper>
